@@ -1,0 +1,6 @@
+c:\users\reno\documents\visual studio 2015\Projects\AlgoProject1\AlgoProject1\bin\Debug\AlgoProject1.exe.config
+c:\users\reno\documents\visual studio 2015\Projects\AlgoProject1\AlgoProject1\bin\Debug\AlgoProject1.exe
+c:\users\reno\documents\visual studio 2015\Projects\AlgoProject1\AlgoProject1\bin\Debug\AlgoProject1.pdb
+c:\users\reno\documents\visual studio 2015\Projects\AlgoProject1\AlgoProject1\obj\Debug\AlgoProject1.exe
+c:\users\reno\documents\visual studio 2015\Projects\AlgoProject1\AlgoProject1\obj\Debug\AlgoProject1.pdb
+c:\users\reno\documents\visual studio 2015\Projects\AlgoProject1\AlgoProject1\obj\Debug\AlgoProject1.csprojResolveAssemblyReference.cache
