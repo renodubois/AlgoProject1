@@ -1,0 +1,4 @@
+/Users/renodubois/Documents/AlgoProject1/AlgoProject1/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/Users/renodubois/Documents/AlgoProject1/AlgoProject1/obj/Debug/AlgoProject1.exe
+/Users/renodubois/Documents/AlgoProject1/AlgoProject1/bin/Debug/AlgoProject1.exe.config
+/Users/renodubois/Documents/AlgoProject1/AlgoProject1/bin/Debug/AlgoProject1.exe
