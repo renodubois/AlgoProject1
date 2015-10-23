@@ -19,22 +19,45 @@ namespace AlgoProject1
             }
         }
 
-        public struct similarPairs
+        private static int Max(int int1, int int2)
         {
-            public int p1, p2;
+            return int1 > int2 ? int1 : int2;
+        }
 
-            public similarPairs(int pair1, int pair2)
-            {
-                p1 = pair1;
-                p2 = pair2;
-            }
-
+        private static int Min(int int1, int int2)
+        {
+            return int1 < int2 ? int1 : int2;
         }
 
 
-        static void compareReviews(char[] r1, char[] r2, similarPairs[] results, int currentResultIndex)
+        public static int LongestCommonSubsequence(char[] str1, char[] str2)
         {
+            int[,] arr = new int[str1.Length + 1, str2.Length + 1];
 
+            for (int i = 0; i <= str2.Length; i++)
+            {
+                arr[0, i] = 0;
+            }
+            for (int i = 0; i <= str1.Length; i++)
+            {
+                arr[i, 0] = 0;
+            }
+
+            for (int i = 1; i <= str1.Length; i++)
+            {
+                for (int j = 1; j <= str2.Length; j++)
+                {
+                    if (str1[i - 1] == str2[j - 1])
+                    {
+                        arr[i, j] = arr[i - 1, j - 1] + 1;
+                    }
+                    else
+                    {
+                        arr[i, j] = Max(arr[i - 1, j], arr[i, j - 1]);
+                    }
+                }
+            }
+            return arr[str1.Length, str2.Length];
         }
 
 
@@ -154,7 +177,16 @@ namespace AlgoProject1
 
             // Run algorithim for each stringset. Returns Review Pairs with a score of 0.7 or above to an array.
 
+            // Test cases.
 
+            char[] test1 = {'A','A','A','C','C','G','T','G','A','G','T','T','A','T','T','C','G','T','T','C','T','A','G','A','A'};
+            char[] test2 = { 'C', 'A', 'C', 'C', 'C', 'C', 'T', 'A', 'A', 'G', 'G', 'T', 'A', 'C', 'C', 'T', 'T', 'T', 'G', 'G', 'T', 'T', 'C' };
+
+            int lcs = 0;
+            float length = Min(test1.Length, test2.Length);
+            lcs = LongestCommonSubsequence(test1, test2);
+            float similarityIndex = lcs / length;
+            Console.WriteLine(similarityIndex);
 
             // Waits for an input to close the Terminal Window.
             Console.ReadKey();
