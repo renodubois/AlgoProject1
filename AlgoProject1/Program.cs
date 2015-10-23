@@ -19,6 +19,13 @@ namespace AlgoProject1
             }
         }
 
+        //public static string RandomString(Random random, int length)
+        //{
+        //    const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //    return new string(Enumerable.Repeat(chars, length)
+        //      .Select(s => s[random.Next(s.Length)]).ToArray());
+        //}
+
         private static int Max(int int1, int int2)
         {
             return int1 > int2 ? int1 : int2;
@@ -105,6 +112,8 @@ namespace AlgoProject1
                 stringLength[i] = rnd.Next(10, 1001);
             }
 
+            stringLength[0] = 10;
+
             // Prints the length array, for testing only.
             foreach (var item in stringLength)
             {
@@ -177,13 +186,89 @@ namespace AlgoProject1
 
             // Run algorithim for each stringset. Returns Review Pairs with a score of 0.7 or above to an array.
 
+            // Initilize Results as a 2D int array
+            float[,] results = new float[100, 100];
+
+            // Set entire array to -1
+            for (int i = 0; i < 100; i++)
+                for (int j = 0; j < 100; j++)
+                    results[i,j] = -1;
+
+            Console.WriteLine("Starting comparisons for StringSet1...");
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    for (int j = 0; j < 100; j++)
+            //    {
+            //        if(i == j)
+            //        {
+            //            results[i, j] = -1;
+            //        }
+            //        else
+            //        {
+            //            if(results[j, i] != -1)
+            //            {
+            //                results[i, j] = results[j, i];
+            //            }
+            //            else
+            //            {
+
+            //                int lcs = LongestCommonSubsequence(stringSet1[i], stringSet1[j]);
+            //                Console.WriteLine(lcs);
+            //                float length = Min(stringSet1[i].Length, stringSet1[j].Length);
+            //                float result = lcs / length;
+            //                //Console.WriteLine(result);
+            //                results[i, j] = result;
+
+            //            }
+            //        }
+            //    }
+            //}
+
+            foreach (var item in stringSet1[0])
+            {
+                Console.WriteLine(item.ToString());
+            }
+
+            Console.Write('\n');
+
+            foreach (var item in stringSet1[1])
+            {
+                Console.WriteLine(item.ToString());
+            }
+            Console.WriteLine(stringLength[0]);
+            int lcs = LongestCommonSubsequence(stringSet1[0],stringSet1[1]);
+            Console.WriteLine(lcs);
+            float length1 = Min(stringSet1[0].Length, stringSet1[1].Length);
+            float result = lcs / length1;
+            Console.WriteLine(result);
 
 
+
+            Console.WriteLine("Done!");
+
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    for (int j = 0; j < 100; j++)
+            //    {
+            //        if(results[i,j] >= 0.7)
+            //        {
+            //            int pair1 = i + 1;
+            //            int pair2 = j + 1;
+            //            Console.Write(pair1);
+            //            Console.Write(" , ");
+            //            Console.Write(pair2);
+            //            Console.Write('\n');
+            //        }
+            //    }
+            //}
+
+            
             //// Test cases.
 
             //char[] test1 = {'A','A','A','C','C','G','T','G','A','G','T','T','A','T','T','C','G','T','T','C','T','A','G','A','A'};
             //char[] test2 = { 'C', 'A', 'C', 'C', 'C', 'C', 'T', 'A', 'A', 'G', 'G', 'T', 'A', 'C', 'C', 'T', 'T', 'T', 'G', 'G', 'T', 'T', 'C' };
-
+             
             //int lcs = 0;
             //float length = Min(test1.Length, test2.Length);
             //lcs = LongestCommonSubsequence(test1, test2);
