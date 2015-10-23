@@ -100,13 +100,13 @@ namespace AlgoProject1
             Console.WriteLine("Creating random strings...");
 
             // Length of Strings: Array containing 10 lengths, varying from 10-1000.
-            for (int i = 0;i < 10;i++)
+            for (int i = 0; i < 10; i++)
             {
                 stringLength[i] = rnd.Next(10, 1001);
             }
 
             // Prints the length array, for testing only.
-            foreach(var item in stringLength)
+            foreach (var item in stringLength)
             {
                 Console.WriteLine(item.ToString());
             }
@@ -116,7 +116,7 @@ namespace AlgoProject1
             {
                 stringSet1[i] = new char[stringLength[0]];
                 randomString(stringLength[0], stringSet1[i]);
-            }   
+            }
 
             // Create 100 strings of length stringLength[1]
             for (int i = 0; i < 100; i++)
@@ -177,17 +177,90 @@ namespace AlgoProject1
 
             // Run algorithim for each stringset. Returns Review Pairs with a score of 0.7 or above to an array.
 
-            // Test cases.
 
-            char[] test1 = {'A','A','A','C','C','G','T','G','A','G','T','T','A','T','T','C','G','T','T','C','T','A','G','A','A'};
-            char[] test2 = { 'C', 'A', 'C', 'C', 'C', 'C', 'T', 'A', 'A', 'G', 'G', 'T', 'A', 'C', 'C', 'T', 'T', 'T', 'G', 'G', 'T', 'T', 'C' };
 
-            int lcs = 0;
-            float length = Min(test1.Length, test2.Length);
-            lcs = LongestCommonSubsequence(test1, test2);
-            float similarityIndex = lcs / length;
-            Console.WriteLine(similarityIndex);
+            //// Test cases.
 
+            //char[] test1 = {'A','A','A','C','C','G','T','G','A','G','T','T','A','T','T','C','G','T','T','C','T','A','G','A','A'};
+            //char[] test2 = { 'C', 'A', 'C', 'C', 'C', 'C', 'T', 'A', 'A', 'G', 'G', 'T', 'A', 'C', 'C', 'T', 'T', 'T', 'G', 'G', 'T', 'T', 'C' };
+
+            //int lcs = 0;
+            //float length = Min(test1.Length, test2.Length);
+            //lcs = LongestCommonSubsequence(test1, test2);
+            //float similarityIndex = lcs / length;
+            //Console.WriteLine(similarityIndex);
+
+            // Part b: Different Lengths
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(10, 101);
+                stringSet1[i] = new char[length];
+                randomString(length, stringSet1[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(101, 201);
+                stringSet2[i] = new char[length];
+                randomString(length, stringSet2[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(201, 301);
+                stringSet3[i] = new char[length];
+                randomString(length, stringSet3[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(301, 401);
+                stringSet4[i] = new char[length];
+                randomString(length, stringSet4[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(401, 501);
+                stringSet5[i] = new char[length];
+                randomString(length, stringSet5[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(501, 601);
+                stringSet6[i] = new char[length];
+                randomString(length, stringSet6[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(601, 701);
+                stringSet7[i] = new char[length];
+                randomString(length, stringSet7[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(701, 801);
+                stringSet8[i] = new char[length];
+                randomString(length, stringSet8[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(801, 901);
+                stringSet9[i] = new char[length];
+                randomString(length, stringSet9[i]);
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                int length = rnd.Next(901, 1001);
+                stringSet10[i] = new char[length];
+                randomString(length, stringSet10[i]);
+            }
             // Waits for an input to close the Terminal Window.
             Console.ReadKey();
         }
